@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;400&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  transition: background 0.5s ease-in, transform 0.5s ease-in;
+}
+
+body {
+  background: #3a4764;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  margin: 50px;
+}
+.calculator .display {
+  height: 100px;
+  background: #182034;
+  border-radius: 10px;
+  margin: 9px 0px;
+  position: relative;
+}
+.calculator .display .current {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 5px;
+}
+.calculator .display .result {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  padding: 5px;
+  font-weight: 800;
+  font-size: 30px;
+}
+.calculator .buttons {
+  background: #232c43;
+  border-radius: 10px;
+  padding: 10px;
+}
+.calculator .buttons span {
+  text-align: center;
+  background: #eae3dc;
+  border-radius: 5px;
+  padding: 4px;
+  height: 25px;
+  box-shadow: 0px 3px 1px 0px #b4a597;
+  cursor: pointer;
+}
+.calculator .buttons span:active {
+  box-shadow: none;
+}
+.calculator .smaller {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 18px;
+  row-gap: 16px;
+}
+.calculator .smaller span:nth-child(4) {
+  background: #637097;
+  box-shadow: 0px 4px 3px 0px #404e72;
+}
+.calculator .smaller span:nth-child(4):active {
+  box-shadow: none;
+}
+.calculator .larger {
+  padding-top: 17px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 26px;
+  column-gap: 13px;
+}
+.calculator .larger span:nth-child(1) {
+  background: #637097;
+  box-shadow: 0px 4px 3px 0px #404e72;
+}
+.calculator .larger span:nth-child(1):active {
+  box-shadow: none;
+}
+.calculator .larger span:nth-child(2) {
+  background: #d03f2f;
+  box-shadow: 0px 4px 3px 0px #93261a;
+}
+.calculator .larger span:nth-child(2):active {
+  box-shadow: none;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.top .toggle {
+  background: #232c43;
+  height: 17px;
+  width: 50px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+}
+.top .toggle span:empty {
+  background: #d03f2f;
+  display: block;
+  height: 75%;
+  width: 26.6666666667%;
+  border-radius: 50%;
+  margin: 4px;
+  border: white 1px solid;
+}
+.top .theme {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+  position: relative;
+  font-size: 12px;
+}
+.top .theme .title-theme {
+  display: block;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */
