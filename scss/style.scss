@@ -2,9 +2,19 @@
 *{
     padding:0px;
     margin:0px;
-    transition: background 0.5s ease-in, transform 0.5s ease-in;
+    transition: background 0.5s ease-in, transform 0.3s ease;
 }
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;400&display=swap');
+@mixin resp($arg){
+    @media screen and (max-width:$arg){
+        @content;
+    }
+}
+@mixin overflow {
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 body{
     background:hsl(222, 26%, 31%);
     display:flex;
@@ -13,7 +23,6 @@ body{
     align-items:center;
     height: 100%;
     width: 100%;
-    
     font-family: 'Spartan', sans-serif;
     font-weight: 700;
     
@@ -21,21 +30,30 @@ body{
 }
 
 .calculator{
+    position: relative;
+    top: 120px;
+    right: 38px;
     display:flex;
     flex-direction:column;
-    width: 375px;
-    margin: 50px;
+    width: 120%;
+    margin: 10px;
     .display{
         height: 100px;
         background: hsl(224, 36%, 15%);
         border-radius: 10px;
         margin: 9px 0px;
         position:relative;
+        direction:rtl;
+        padding: 4px;
+        
         .current{
             position:absolute;
             right:0px;
             bottom:0px;
             padding: 5px;
+            width:100%;
+            @include overflow;
+            
         }
         .result{
             position:absolute;
@@ -44,13 +62,14 @@ body{
             padding: 5px;
             font-weight: 800;
             font-size: 30px;
+            width:100%;
+            @include overflow;
         }
     }
     .buttons{
         background:hsl(223, 31%, 20%);
         border-radius: 10px;
         padding: 10px;
-        
         
         span{
             text-align: center;
@@ -143,8 +162,4 @@ body{
            display: block
        }
     }
-}
-.attribution{
-    position:absolute;
-    bottom: 200px;
 }

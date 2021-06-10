@@ -2,7 +2,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  transition: background 0.5s ease-in, transform 0.5s ease-in;
+  transition: background 0.5s ease-in, transform 0.3s ease;
 }
 
 body {
@@ -18,10 +18,13 @@ body {
 }
 
 .calculator {
+  position: relative;
+  top: 120px;
+  right: 38px;
   display: flex;
   flex-direction: column;
-  width: 375px;
-  margin: 50px;
+  width: 120%;
+  margin: 10px;
 }
 .calculator .display {
   height: 100px;
@@ -29,12 +32,18 @@ body {
   border-radius: 10px;
   margin: 9px 0px;
   position: relative;
+  direction: rtl;
+  padding: 4px;
 }
 .calculator .display .current {
   position: absolute;
   right: 0px;
   bottom: 0px;
   padding: 5px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .calculator .display .result {
   position: absolute;
@@ -43,6 +52,10 @@ body {
   padding: 5px;
   font-weight: 800;
   font-size: 30px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .calculator .buttons {
   background: #232c43;
@@ -128,11 +141,6 @@ body {
 }
 .top .theme .title-theme {
   display: block;
-}
-
-.attribution {
-  position: absolute;
-  bottom: 200px;
 }
 
 /*# sourceMappingURL=style.css.map */
