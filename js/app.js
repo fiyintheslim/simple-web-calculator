@@ -34,6 +34,8 @@ const click=(button)=>{
             first=result;
             oper="";
             second="";
+        }else if(first && !oper && !second){
+            result=first;
         }
         
     }else if(val === "del"){
@@ -64,17 +66,16 @@ const click=(button)=>{
             return;
         }
     }
+    else if(!oper && result){
+        return
+    }
     else if(!oper){
         //if an operator hasn't been clicked
-        console.log(first);
         first=first+val;
-        console.log(first);
         return
     }else{
         //if an operator has been clicked before a number is clicked
-        second+=val;
-        console.log(second);
-        console.log(oper)
+        second+=val; 
         return
     }
     
@@ -96,12 +97,18 @@ function updateDisplay(){
         b4Op=format.format(first);
         afterOp=format.format(second);
         final=`${b4Op} ${oper} ${afterOp}`
+        
+        
     }else{
         b4Op=format.format(first);
-        final=`${b4Op} ${oper}`;   
+        final=`${b4Op} ${oper}`;
+        console.log(final);
+        
+        
     }
+    console.log(final)
     display.querySelector(".current").innerText=final;
-    display.querySelector(".result").innerText=new Intl.NumberFormat().format(result);
+    display.querySelector(".result").innerText=format.format(result);
 }
 
 const del=()=>{

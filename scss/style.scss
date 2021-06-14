@@ -43,26 +43,28 @@ body{
         border-radius: 10px;
         margin: 9px 0px;
         position:relative;
-        direction:rtl;
+        direction:ltr;
         padding: 4px;
         
         .current{
             position:absolute;
-            right:0px;
+            right:-15px;
             bottom:0px;
             padding: 5px;
             width:100%;
+            
+            
             @include overflow;
             
         }
         .result{
             position:absolute;
             top: 8px;
-            right:0px;
+            right:-8px;
             padding: 5px;
             font-weight: 800;
-            font-size: 30px;
-            width:100%;
+            font-size: 27px;
+            width:95%;
             @include overflow;
         }
     }
